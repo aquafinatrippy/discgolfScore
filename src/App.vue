@@ -23,7 +23,7 @@
               </v-card-subtitle>
 
               <v-card-actions class="text-right" color="error">
-                <v-btn text>Eemalda mängija</v-btn>
+                <v-btn text @click="playerRem(i)">Eemalda mängija</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -98,6 +98,9 @@ export default {
     },
     reload() {
       location.reload();
+    },
+    playerRem(i) {
+      this.players.splice(i, 1);
     }
   }
 };
