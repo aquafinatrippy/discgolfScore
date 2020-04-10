@@ -2,17 +2,20 @@
   <v-app>
     <v-container>
       <div class="text-center" style="padding-bottom: 5%;">
-        <v-btn class="mx-2" fab dark large color="purple" @click="infoDialog = true">
+        <v-btn class="mx-2" fab dark large color="error" @click="reload()">
+          <v-icon dark>mdi-refresh</v-icon>
+        </v-btn>
+        <v-btn class="mx-2" fab dark large color="primary" @click="infoDialog = true">
           <v-icon dark>mdi-information-outline</v-icon>
         </v-btn>
-        <v-btn class="mx-2" fab dark large color="purple" @click="dialog = true">
+        <v-btn class="mx-2" fab dark large color="success" @click="dialog = true">
           <v-icon dark>mdi-account-multiple-plus</v-icon>
         </v-btn>
       </div>
       <div v-if="players.length > 0">
         <v-row dense v-for="(player, i) in players" :key="i">
           <v-col cols="8">
-            <v-card color="#800000" dark>
+            <v-card color="#009933" dark>
               <v-card-title class="headline">{{player.name}}</v-card-title>
 
               <v-card-subtitle>
@@ -25,10 +28,10 @@
             </v-card>
           </v-col>
           <v-col cols="4" class="ratinBtns">
-            <v-btn large class="mx-2" color="success">
+            <v-btn large class="mx-2" color="success" @click="player.score += 1">
               <v-icon>mdi-plus</v-icon>
             </v-btn>
-            <v-btn large class="mx-2" color="error">
+            <v-btn large class="mx-2" color="error" @click="player.score -= 1">
               <v-icon>mdi-minus</v-icon>
             </v-btn>
           </v-col>
@@ -92,6 +95,9 @@ export default {
       };
       players.push(player);
       this.dialog = false;
+    },
+    reload() {
+      location.reload();
     }
   }
 };
