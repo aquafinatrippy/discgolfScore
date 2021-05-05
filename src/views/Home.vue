@@ -1,21 +1,12 @@
 <template>
   <v-app>
     <!-- <About :test="infoDialog"  /> -->
-    <Navbar />
+    <Navbar>
+      <v-btn class="mx-2" fab dark large color="success" @click="dialog = true">
+        <v-icon dark>mdi-account-multiple-plus</v-icon>
+      </v-btn>
+    </Navbar>
     <v-container>
-      <div class="text-center" style="padding-bottom: 5%;">
-        <v-btn
-          class="mx-2"
-          fab
-          dark
-          large
-          color="success"
-          @click="dialog = true"
-        >
-          <v-icon dark>mdi-account-multiple-plus</v-icon>
-        </v-btn>
-      </div>
-
       <PlayerList :players="players" />
 
       <v-dialog v-model="dialog" width="500">
@@ -66,9 +57,6 @@ export default {
       };
       players.push(player);
       this.dialog = false;
-    },
-    reload() {
-      location.reload();
     },
   },
 };

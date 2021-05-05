@@ -13,6 +13,7 @@
         @click="infoDialog = true"
         ><v-icon dark>mdi-information-outline</v-icon>
       </v-btn>
+      <slot></slot>
     </div>
     <v-dialog v-model="infoDialog" width="500">
       <About />
