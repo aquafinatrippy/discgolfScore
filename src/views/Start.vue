@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container class="startCont">
          <v-card max-width="600">
           <v-card-title class="headline grey lighten-2" primary-title
             >Vali rada või loo enda rada</v-card-title>
@@ -27,3 +27,11 @@ export default {
     name: "Start"
 }
 </script>
+
+<style lang="scss" scoped>
+.startCont{
+   display: flex;
+   justify-content: center;
+   height: 100%;
+}
+</style>
