@@ -10,12 +10,15 @@
           <h3>Raja loomine</h3>
           <strong>Vali mitu korvi on ja alusta skoori lugemist.</strong>
 
-          <v-btn color="primary">
+          <v-btn v-if="!create" color="primary" @click="create = true">
             <v-icon left>
               mdi-pencil </v-icon
             >Loo rada</v-btn
           >
           <br />
+          <div v-if="create">
+            <CreateTrack />
+          </div>
           <v-divider></v-divider>
 
           <h3>Raja valimine</h3>
@@ -36,13 +39,16 @@
 </template>
 
 <script>
-import { CreateTrack } from "@/components/CreateTrack";
+import CreateTrack from "@/components/CreateTrack";
 
 export default {
   name: "Start",
   components: {
       CreateTrack
-  }
+  },
+  data: () => ({
+    create: false
+  })
 };
 </script>
 
