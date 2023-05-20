@@ -1,5 +1,5 @@
 <template>
-  <v-app class="mt-10">
+  <v-app >
     <Navbar>
       <v-btn class="mx-2" fab dark large color="success" @click="dialog = true">
         <v-icon dark>mdi-account-multiple-plus</v-icon>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="text-center" style="padding-bottom: 5%;">
+  <div class="mt-10">
+    <div class="text-center" style="padding-bottom: 5%">
       <v-btn class="mx-2" fab dark large color="error" @click="reload()">
         <v-icon dark>mdi-refresh</v-icon>
       </v-btn>
